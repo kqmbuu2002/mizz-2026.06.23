@@ -221,19 +221,32 @@
   }
   .product-option label {
     display: flex;
-    align-items: flex-start;
-    gap: 12px;
+    align-items: stretch;
+    gap: 0;
     background: var(--white);
     border: 1px solid var(--border);
-    padding: 14px;
     cursor: pointer;
     transition: border-color 0.2s, background 0.2s;
     margin: 0;
     font-weight: 300;
+    overflow: hidden;
   }
   .product-option input:checked + label {
     border-color: var(--gold);
     background: rgba(201,168,76,0.04);
+  }
+  .product-img {
+    width: 90px;
+    flex-shrink: 0;
+    object-fit: cover;
+    display: block;
+  }
+  .product-body {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+    flex: 1;
   }
   .checkbox-box {
     width: 18px;
@@ -291,6 +304,46 @@
     text-align: right;
     flex-shrink: 0;
     font-family: 'Noto Serif TC', serif;
+  }
+
+  /* Line reminder */
+  .line-reminder {
+    margin-top: 16px;
+    background: #06C755;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .line-reminder-icon {
+    width: 32px;
+    height: 32px;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+  }
+  .line-reminder-text {
+    flex: 1;
+  }
+  .line-reminder-text strong {
+    display: block;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .line-reminder-text span {
+    color: rgba(255,255,255,0.8);
+    font-size: 11px;
+  }
+  .line-reminder-arrow {
+    color: rgba(255,255,255,0.8);
+    font-size: 16px;
   }
 
   /* qty note */
@@ -557,39 +610,48 @@
       <div class="product-option">
         <input type="checkbox" id="p1" name="products" value="HERMES大地-100ml-1950">
         <label for="p1">
-          <div class="checkbox-box"></div>
-          <div class="product-info">
-            <div class="product-brand">Hermès</div>
-            <div class="product-name">大地男性淡香水</div>
-            <div class="product-spec">Terre d'Hermès｜100ml</div>
+          <img class="product-img" src="大地.jpg" alt="Hermès 大地">
+          <div class="product-body">
+            <div class="checkbox-box"></div>
+            <div class="product-info">
+              <div class="product-brand">Hermès</div>
+              <div class="product-name">大地男性淡香水</div>
+              <div class="product-spec">Terre d'Hermès｜100ml</div>
+            </div>
+            <div class="product-price">$1,950</div>
           </div>
-          <div class="product-price">$1,950</div>
         </label>
       </div>
 
       <div class="product-option">
         <input type="checkbox" id="p2" name="products" value="CHLOE仙境花園北國雪松-150ml-4599">
         <label for="p2">
-          <div class="checkbox-box"></div>
-          <div class="product-info">
-            <div class="product-brand">Chloé</div>
-            <div class="product-name">仙境花園北國雪松</div>
-            <div class="product-spec">150ml</div>
+          <img class="product-img" src="北國.jpg" alt="Chloé 北國雪松">
+          <div class="product-body">
+            <div class="checkbox-box"></div>
+            <div class="product-info">
+              <div class="product-brand">Chloé</div>
+              <div class="product-name">仙境花園北國雪松</div>
+              <div class="product-spec">150ml</div>
+            </div>
+            <div class="product-price">$4,599</div>
           </div>
-          <div class="product-price">$4,599</div>
         </label>
       </div>
 
       <div class="product-option">
         <input type="checkbox" id="p3" name="products" value="JoMalone鼠尾草海鹽-30ml-1499">
         <label for="p3">
-          <div class="checkbox-box"></div>
-          <div class="product-info">
-            <div class="product-brand">Jo Malone London</div>
-            <div class="product-name">鼠尾草 & 海鹽</div>
-            <div class="product-spec">Sage & Sea Salt｜30ml</div>
+          <img class="product-img" src="JO.jpg" alt="Jo Malone 鼠尾草海鹽">
+          <div class="product-body">
+            <div class="checkbox-box"></div>
+            <div class="product-info">
+              <div class="product-brand">Jo Malone London</div>
+              <div class="product-name">鼠尾草 & 海鹽</div>
+              <div class="product-spec">Sage & Sea Salt｜30ml</div>
+            </div>
+            <div class="product-price">$1,499</div>
           </div>
-          <div class="product-price">$1,499</div>
         </label>
       </div>
 
@@ -660,6 +722,15 @@
       <div class="error-msg">請填寫取件資訊</div>
     </div>
 
+    <a href="https://mizz.tw/line/oc" target="_blank" class="line-reminder">
+      <div class="line-reminder-icon">💬</div>
+      <div class="line-reminder-text">
+        <strong>需要併單或有任何問題？</strong>
+        <span>點此私訊 Mizz美滋滋 官方 Line</span>
+      </div>
+      <div class="line-reminder-arrow">›</div>
+    </a>
+
     <div class="submit-area">
       <button type="submit" class="submit-btn">確認送出訂單</button>
       <div class="submit-note">
@@ -688,7 +759,7 @@
 </div>
 
 <script>
-  const SPREADSHEET_URL = 'https://script.google.com/macros/s/AKfycbyTw-l_IoK6YxfFNHHw5AkHLC4I9Zn5DHqcBonUJZCD2pjQkucWAB1CZoO_VLHsPNN0/exec';
+  const SPREADSHEET_URL = '';
 
   const PRICES = { p1: 1950, p2: 4599, p3: 1499 };
   const FREE_SHIPPING_THRESHOLD = 1499;
