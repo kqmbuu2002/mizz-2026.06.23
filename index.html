@@ -607,7 +607,7 @@
   <div class="header-badge">Private Group Only</div>
   <h1>踩雷達人-佑青哥😎<br>私群VIP限定預購</h1>
   <div class="header-sub">Mizz 美滋滋｜私群專屬優惠</div>
-  <div class="flash-tag">⚡ 快閃優惠 6/16(二) – 6/18(四)</div>
+  <div class="flash-tag">⚡ 快閃優惠 6/23(二) – 6/25(四)</div>
 </div>
 
 <!-- Payment Info -->
@@ -654,15 +654,15 @@
     <div class="products-grid">
 
       <div class="product-card" id="card-p1">
-        <img class="product-img" src="01.jpg" alt="Jo Malone 古龍水三入禮盒">
+        <img class="product-img" src="01.jpg" alt="ARMINI 東方紅木">
         <div class="product-body">
           <div class="product-info">
-            <div class="product-brand">Jo Malone London</div>
-            <div class="product-name">Jo Malone三入禮盒-30ml/9ml/9ml | 專櫃原價$4,850</div>
-            <div class="product-spec">小蒼蘭30ml／鼠尾草9ml／藍風鈴9ml｜限量10件</div>
+            <div class="product-brand">ARMINI</div>
+            <div class="product-name">東方紅木</div>
+            <div class="product-spec">50ml</div>
           </div>
           <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex-shrink:0">
-            <div class="product-price">$1,990</div>
+            <div class="product-price"></div>
             <div class="qty-stepper">
               <button type="button" class="qty-btn" onclick="changeQty('p1',-1)">−</button>
               <div class="qty-num" id="qty-p1">0</div>
@@ -673,38 +673,19 @@
       </div>
 
       <div class="product-card" id="card-p2">
-        <img class="product-img" src="02.jpg" alt="寶格麗 花舞輕盈紫水晶">
+        <img class="product-img" src="02.jpg" alt="PARDA 唯我莫測-幻花香境">
         <div class="product-body">
           <div class="product-info">
-            <div class="product-brand">Bvlgari</div>
-            <div class="product-name">【T】花舞輕盈紫水晶女性淡香水-100ml | 專櫃原價$5,600</div>
-            <div class="product-spec">Omnia Amethyste｜100ml｜限量10件</div>
+            <div class="product-brand">PARDA</div>
+            <div class="product-name">唯我莫測-幻花香境女性淡香精</div>
+            <div class="product-spec">50ml</div>
           </div>
           <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex-shrink:0">
-            <div class="product-price">$2,499</div>
+            <div class="product-price"></div>
             <div class="qty-stepper">
               <button type="button" class="qty-btn" onclick="changeQty('p2',-1)">−</button>
               <div class="qty-num" id="qty-p2">0</div>
               <button type="button" class="qty-btn" onclick="changeQty('p2',1)">+</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card" id="card-p3">
-        <img class="product-img" src="03.jpg" alt="Tom Ford 東方烏木">
-        <div class="product-body">
-          <div class="product-info">
-            <div class="product-brand">Tom Ford</div>
-            <div class="product-name">東方烏木淡香精-50ml | 專櫃原價$7,280</div>
-            <div class="product-spec">Oud Wood｜50ml｜限量10件</div>
-          </div>
-          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex-shrink:0">
-            <div class="product-price">$5,990</div>
-            <div class="qty-stepper">
-              <button type="button" class="qty-btn" onclick="changeQty('p3',-1)">−</button>
-              <div class="qty-num" id="qty-p3">0</div>
-              <button type="button" class="qty-btn" onclick="changeQty('p3',1)">+</button>
             </div>
           </div>
         </div>
@@ -816,12 +797,12 @@
 <script>
   const SPREADSHEET_URL = 'https://script.google.com/macros/s/AKfycbyTw-l_IoK6YxfFNHHw5AkHLC4I9Zn5DHqcBonUJZCD2pjQkucWAB1CZoO_VLHsPNN0/exec';
 
-  const PRICES = { p1: 1990, p2: 2499, p3: 5990 };
-  const NAMES = { p1: 'JoMalone古龍水三入禮盒(小蒼蘭/鼠尾草/藍風鈴)', p2: '寶格麗【T】花舞輕盈紫水晶女性淡香水-100ml', p3: 'TomFord東方烏木淡香精-50ml' };
-  const STOCK = { p1: 10, p2: 10, p3: 10 };
+  const PRICES = { p1: 0, p2: 0 };
+  const NAMES = { p1: 'ARMINI 東方紅木-50ml', p2: 'PARDA 唯我莫測-幻花香境女性淡香精-50ml' };
+  const STOCK = { p1: 10, p2: 10 };
   const FREE_SHIPPING_THRESHOLD = 1499;
   const SHIPPING_FEE = 100;
-  const qtys = { p1: 0, p2: 0, p3: 0 };
+  const qtys = { p1: 0, p2: 0 };
 
   function changeQty(id, delta) {
     const newQty = qtys[id] + delta;
